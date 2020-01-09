@@ -106,7 +106,7 @@ const getEnvironment = (weather, timezone) => {
 }
 
 const lineMatching = (element, line, environment) => {
-  // allow all 
+  // allow all
   const tags = line.tags === undefined ? [['*', '*']] : line.tags
 
   for (let i = 0; i < tags.length; i++) {
@@ -202,13 +202,13 @@ const writePoem = () => {
     template = (typeof template === 'function')
       ? template(uniqLineMatches[randomIndex].feature, environment)
       : template
-    
+
     finalLines.push(template)
     if (removeLine === true) {
       uniqLineMatches.splice(randomIndex, 1)
     }
   }
-  
+
   document.querySelector('.js-poem').innerHTML = finalLines
     .join('<br>')
 }
@@ -217,14 +217,14 @@ let elements
 let environment
 
 const load = () => {
-  
+
   const toggleLoadingState = (loading) => {
     document.querySelector('.js-poem-container').classList.toggle('-disabled', loading)
     document.querySelector('.js-credits').classList.toggle('-hidden', loading)
   }
   toggleLoadingState(true)
 
-  document.querySelector('.js-poem').innerHTML = 'Writing a haiku...'
+  document.querySelector('.js-poem').innerHTML = 'Escribiendo un haiku...'
   console.log(center)
 
   document.querySelector('h1').innerText = '...'
@@ -306,14 +306,14 @@ const intro = () => {
     map.on('movestart', () => {
       document.querySelector('.js-poem-container').classList.toggle('-hidden', true)
     })
-    
+
     map.on('moveend', () => {
       startLoadTimeout = setTimeout(() => {
         document.querySelector('.js-poem-container').classList.toggle('-hidden', false)
         setCenter()
       }, 800)
     })
-    
+
     map.on('move', () => {
       clearTimeout(startLoadTimeout)
     })
@@ -323,16 +323,16 @@ const intro = () => {
     center = map.getCenter()
     load()
   }, 1000)
-  
+
 }
 
 
 if (window.L) {
   map = L.map('map', mapConfig)
   map.setView(center, 14)
-  
+
   var hash = new L.Hash(map)
-  
+
   L.tileLayer(
     `${window.config.tiles.url}?access_token=${window.config.tiles.token}`
   ).addTo(map)
