@@ -43,7 +43,7 @@ window.lines = [
     condition: (el, env) => env.moment === 'afternoon',
   },
   {
-    template: ['The day is young', 'The air still crisp', 'Good morning', 'Sad morning'],
+    template: ['El día es joven', 'El aire está crispado', 'Buenos días', 'Mañana triste'],
     condition: (el, env) => env.moment === 'morning',
   },
   {
