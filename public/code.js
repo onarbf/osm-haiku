@@ -33,7 +33,7 @@ const CONFIG = {
 const mapConfig = {
   zoomControl: false,
   attributionControl: false,
-  minZoom: 3
+  minZoom: 12
 }
 if (window.config.maxBounds !== null && window.config.maxBounds !== undefined) {
   mapConfig.maxBounds = window.config.maxBounds
